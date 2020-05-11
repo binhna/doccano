@@ -309,10 +309,14 @@ EMAIL_PORT = env.int('EMAIL_PORT', 587)
 if not EMAIL_HOST:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+CORS_ORIGIN_ALLOW_ALL=True
 
 if DEBUG:
     CORS_ORIGIN_WHITELIST = (
         'http://127.0.0.1:3000',
         'http://0.0.0.0:3000',
-        'http://localhost:3000'
+        'http://localhost:3000',
+	'http://192.168.1.34:3000',
+	'http://192.168.1.34:8000'
     )
+    CORS_ORIGIN_ALLOW_ALL = True
